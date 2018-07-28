@@ -129,6 +129,8 @@ void test_is_valid ()
 {
     assert(is_valid("string"));
     assert(!is_valid("hello="));
+    assert(!is_valid("="));
+    assert(!is_valid(""));
 }
 
 void test_should_reject_invalid_record ()
