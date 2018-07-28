@@ -9,6 +9,7 @@ INCLUDES = -I$(SRC_DIR)
 CPPFLAGS = -std=c++14 -O2 -Wall -fsanitize=address
 LDFLAGS = -fsanitize=address
 
+# Define the rule to make object file from cpp
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.cpp
 	$(COMPILER) -o $@ $(INCLUDES) $(CPPFLAGS) -c $^
 
@@ -28,7 +29,4 @@ clean:
 	rm -rf $(BIN_DIR)
 
 run: all
-	$(TARGET_BIN)
-
-test: all
-	$(TARGET_BIN)
+	BIN=$(TARGET_BIN) python test/fact_test.py
