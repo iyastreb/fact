@@ -11,7 +11,7 @@ def run(arg = None):
         return ex.returncode, ex.output.strip()
     
 '''
-  Integration tests that can be use for both implementations,
+  Integration tests that can be used for both implementations,
   C++ and C#
 '''
 class TestFact(unittest.TestCase):
